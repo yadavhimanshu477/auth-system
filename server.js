@@ -85,10 +85,10 @@ app.route('/forgetPassword')
 	    res.sendFile(__dirname + '/public/forget.html');
 	})
 	.post((req, res) => {
-		username: req.body.username,
-        email: req.body.email,
-        password: req.body.password,
-        confirm_password : req.body.confirm_password
+		var username = req.body.username
+        var email = req.body.email
+        var password = req.body.password
+        var confirm_password = req.body.confirm_password
 
 		if (username == userData.username && email == userData.email) {
 		    insertDataJson({
